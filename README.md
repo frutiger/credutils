@@ -10,6 +10,13 @@ UTF-8 names.
 Store in a credential with the specfied `<credential-name>` the contents of the
 specfied `<filename>` if specified or standard input if `-` was specified.
 
+#### readcred
+
+    Usage: readcred <credential-name>
+
+Write the contents of the credential with the specified `<credential-name>` to
+standard output.
+
 ## License
 
 Copyright (C) 2015 Masud Rahman
