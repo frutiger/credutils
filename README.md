@@ -3,6 +3,13 @@
 A set of command-line tools to manipulate the Windows Credential Manager with
 UTF-8 names.
 
+#### writecred
+
+    Usage: writecred <credential-name> ( <filename> | - )
+
+Store in a credential with the specfied `<credential-name>` the contents of the
+specfied `<filename>` if specified or standard input if `-` was specified.
+
 ## License
 
 Copyright (C) 2015 Masud Rahman
