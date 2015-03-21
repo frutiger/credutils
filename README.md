@@ -17,6 +17,12 @@ specfied `<filename>` if specified or standard input if `-` was specified.
 Write the contents of the credential with the specified `<credential-name>` to
 standard output.
 
+#### delcred
+
+    Usage: delcred <credential-name>
+
+Deletes the credential with the specified `<credential-name>`.
+
 ## License
 
 Copyright (C) 2015 Masud Rahman
