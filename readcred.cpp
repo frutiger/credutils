@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     std::cout.write(reinterpret_cast<const char *>(credential->CredentialBlob),
                     credential->CredentialBlobSize);
 
-    ::CredFree(&credential);
+    ::CredFree(credential);
     return 0;
 }
 
