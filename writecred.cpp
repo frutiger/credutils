@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <iterator>
 #include <string>
 #include <vector>
 
@@ -56,18 +57,16 @@ int main(int argc, char *argv[])
                           &utf16Target[0],
                           utf16Target.length());
 
-    std::vector<char> data;
+    std::vector<unsigned char> data;
     std::copy(std::istreambuf_iterator<char>(input),
               std::istreambuf_iterator<char>(),
               std::back_inserter(data));
-
 
     CREDENTIALW credential        = {};
     credential.Type               = CRED_TYPE_GENERIC;
     credential.TargetName         = &utf16Target[0];
     credential.CredentialBlobSize = data.size();
-    credential.CredentialBlob     = reinterpret_cast<unsigned char *>(
-                                                                  data.data());
+    credential.CredentialBlob     = data.data();
     credential.Persist            = CRED_PERSIST_LOCAL_MACHINE;
     credential.UserName           = L"credutils";
     credential.Comment            = L"Saved by credutils";

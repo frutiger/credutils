@@ -1,6 +1,8 @@
 // readcred.cpp
 
+#include <algorithm>
 #include <iostream>
+#include <iterator>
 #include <string>
 
 #include <windows.h>
@@ -43,8 +45,9 @@ int main(int argc, char *argv[])
         return -1;                                                    // RETURN
     }
 
-    std::cout.write(reinterpret_cast<const char *>(credential->CredentialBlob),
-                    credential->CredentialBlobSize);
+    std::copy_n(credential->CredentialBlob,
+                credential->CredentialBlobSize,
+                std::ostreambuf_iterator<char>(std::cout.rdbuf()));
 
     ::CredFree(credential);
     return 0;
