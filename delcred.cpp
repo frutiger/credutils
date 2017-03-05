@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
                           &utf16Target[0],
                           utf16Target.length());
 
-    CREDENTIALW *credential;
     if (FALSE == ::CredDeleteW(utf16Target.c_str(),
                                CRED_TYPE_GENERIC,
                                0)) {
